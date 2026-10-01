@@ -87,6 +87,16 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://webtools-labs.com/" },
+    { "@type": "ListItem", "position": 2, "name": "フリマ配送方法・送料比較ツール" }
+  ]
+}
+</script>
 <style>
 :root {
   --bg: #ffffff;
@@ -237,10 +247,14 @@ footer.site-footer a { color: var(--accent); }
 }
 .faq-item[open] summary::after { content: '−'; }
 .faq-item p { margin: 0.7rem 0 0; color: var(--muted); font-size: 0.88rem; }
+.breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.1rem; }
+.breadcrumb a { color: var(--accent); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 <div class="page">
+  <nav class="breadcrumb" aria-label="パンくずリスト"><a href="https://webtools-labs.com/">ホーム</a> / フリマ配送方法・送料比較ツール</nav>
   <header class="masthead">
     <h1>フリマ配送方法・送料比較ツール</h1>
     <p class="lede">ネコポス、ゆうパケット、宅急便、ゆうパック……フリマアプリの配送方法は多すぎて分かりにくい。サイズと重さを入れれば、使える方法を安い順に並べます。2026年10月の料金改定情報も下記に掲載しています。</p>
