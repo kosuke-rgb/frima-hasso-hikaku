@@ -168,7 +168,7 @@ tr.ineligible { opacity: 0.45; }
 .reason { font-size: 0.76rem; }
 
 .ref-table { overflow-x: auto; }
-.ref-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 520px; }
+.ref-table table { width: 100%; border-collapse: collapse; font-size: 0.86rem; min-width: 0; }
 .ref-table th, .ref-table td { padding: 0.5rem 0.5rem; border-bottom: 1px solid var(--line); text-align: left; }
 .ref-table td.num { font-variant-numeric: tabular-nums; text-align: right; }
 
@@ -258,6 +258,15 @@ footer.site-footer a { color: var(--accent); }
 .breadcrumb { font-size: 0.78rem; color: var(--muted); margin-bottom: 1.1rem; }
 .breadcrumb a { color: var(--accent); text-decoration: none; }
 .breadcrumb a:hover { text-decoration: underline; }
+/* スマホで表が画面からはみ出さないように（2026-11-17） */
+@media (max-width: 600px) {
+  .ref-table table { font-size: 0.8rem; }
+  .ref-table th, .ref-table td { padding: 0.45rem 0.3rem; }
+  .ref-table th, .ref-table td:first-child { white-space: normal; }
+  .ref-table td.nw { white-space: nowrap; }
+  .ref-table th:first-child, .ref-table td:first-child { min-width: 5em; position: sticky; left: 0; z-index: 1; background: var(--bg); box-shadow: 1px 0 0 var(--line); }
+  .ref-table tr.best td:first-child, .ref-table tr.total td:first-child, .ref-table tr.next td:first-child, .ref-table tr.highlight td:first-child { background: var(--best-bg, var(--bg)); }
+}
 </style>
 </head>
 <body>
@@ -330,10 +339,10 @@ footer.site-footer a { color: var(--accent); }
       <table>
         <thead><tr><th>配送方法</th><th>運営</th><th class="num">送料</th><th>上限の目安</th></tr></thead>
         <tbody>
-          <tr><td>ゆうパケットポストmini</td><td>日本郵便</td><td class="num">180円</td><td>専用封筒(A5相当)・2kgまで</td></tr>
-          <tr><td>ネコポス</td><td>ヤマト運輸</td><td class="num">210円</td><td>A4・厚さ3cm・1kgまで</td></tr>
+          <tr><td>ゆうパケットポストmini</td><td>日本郵便</td><td class="num nw">180円</td><td>専用封筒(A5相当)・2kgまで</td></tr>
+          <tr><td>ネコポス</td><td>ヤマト運輸</td><td class="num nw">210円</td><td>A4・厚さ3cm・1kgまで</td></tr>
           <tr><td>ゆうパケットポスト</td><td>日本郵便</td><td class="num">215円<br><span style="color:var(--muted);font-size:0.76rem">(+専用箱65円またはシール5円)</span></td><td>A4・厚さ3cm・2kgまで</td></tr>
-          <tr><td>ゆうパケット</td><td>日本郵便</td><td class="num">230円</td><td>A4・厚さ3cm・1kgまで</td></tr>
+          <tr><td>ゆうパケット</td><td>日本郵便</td><td class="num nw">230円</td><td>A4・厚さ3cm・1kgまで</td></tr>
           <tr><td>宅急便コンパクト</td><td>ヤマト運輸</td><td class="num">520円<br><span style="color:var(--muted);font-size:0.76rem">(専用箱代込み)</span></td><td>専用箱(約20×25×5cm)</td></tr>
           <tr><td>ゆうパケットプラス</td><td>日本郵便</td><td class="num">520円<br><span style="color:var(--muted);font-size:0.76rem">(専用箱代込み)</span></td><td>専用箱(17×24×7cm)・2kgまで</td></tr>
           <tr><td>宅急便 60〜160</td><td>ヤマト運輸</td><td class="num">750〜1,700円</td><td>3辺合計60〜160cm・2〜25kg</td></tr>
@@ -351,9 +360,9 @@ footer.site-footer a { color: var(--accent); }
       <table>
         <thead><tr><th>配送方法</th><th class="num">送料</th><th>備考</th></tr></thead>
         <tbody>
-          <tr class="best"><td>ゆうパケットポストmini 最安</td><td class="num">180円</td><td>専用封筒(A5相当)に収まる場合のみ</td></tr>
-          <tr><td>ネコポス</td><td class="num">210円</td><td>A4サイズ以内</td></tr>
-          <tr><td>ゆうパケットポスト</td><td class="num">215円</td><td>A4サイズ以内</td></tr>
+          <tr class="best"><td>ゆうパケットポストmini 最安</td><td class="num nw">180円</td><td>専用封筒(A5相当)に収まる場合のみ</td></tr>
+          <tr><td>ネコポス</td><td class="num nw">210円</td><td>A4サイズ以内</td></tr>
+          <tr><td>ゆうパケットポスト</td><td class="num nw">215円</td><td>A4サイズ以内</td></tr>
         </tbody>
       </table>
     </div>
